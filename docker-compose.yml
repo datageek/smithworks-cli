@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  roll_the_dice:
+    build:
+      context: ./
+    volumes:
+      - ./:/opt/smithworks-cli
+    command: /bin/bash
