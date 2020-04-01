@@ -5,7 +5,7 @@ app = typer.Typer()
 
 @app.command()
 def begin():
-    pretty = typer.style("smithworks CLI", fg="red")
+    pretty = typer.style("smithworks CLI TEST", fg="red")
     typer.echo(
         "\nThank you for choosing the "
         + pretty
@@ -21,8 +21,18 @@ def menu():
     typer.secho("  (A)mazon Web Services")
     typer.secho("  (G)oogle Cloud Platform")
     provider = typer.prompt("Select your hosting provider (d/a/g)")
-    print(provider[0])
-
+    print(read_provider(provider[0]))
+    
+def read_provider(hosting_provider):
+    #TODO My idea would be to have the method calls as the values of
+    # this dictionary.  I am thinking the methods would be in a 
+    # separate file.
+    switch = {
+        "d":"d",
+        "a":"a",
+        "g":"g"
+    }
+    return switch.get(hosting_provider)
 
 
 
